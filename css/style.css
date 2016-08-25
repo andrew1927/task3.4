@@ -1,0 +1,109 @@
+.content-wrapper{
+	position: relative;
+	width: 1024px;
+	height: 768px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+.content-wrapper .night{
+	height: 300px;
+	padding: 117px 0 0 82px;
+	box-sizing: border-box;
+	background:  url(../img/smoke.png) no-repeat,
+	url(../img/stars.png) no-repeat, 
+	url(../img/night.png) no-repeat;
+}
+@keyframes water{
+	from { 
+		transform: translate( 0, 0);
+	}
+	to {
+		transform: translate( 0, 5px);
+	}
+}
+.content-wrapper .water{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 521px;
+	background:  url(../img/water.png) no-repeat;
+	animation: water 2s ease-in-out infinite alternate;
+}
+@keyframes wave{
+	from { 
+		transform: translate( 0, 5px);
+	}
+	to {
+		transform: translate( 0, 0px);
+	}
+}
+.content-wrapper .wave{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 524px;
+	background:  url(../img/wave.png) no-repeat;
+	animation: wave 2s ease-in-out infinite alternate;
+
+}
+.content-wrapper .water .iceberg{
+	position: absolute;
+	top: -5%;
+	left: 44%;
+	width: 115px;
+	height: 130px;
+	background:  url(../img/iceberg.png) no-repeat,
+	url(../img/iceberg1.png) no-repeat bottom right;
+}
+.content-wrapper .night > p{
+	font: 30px HelveticaRoman;
+	color: #95ca00;
+}
+.content-wrapper .torpedo-wrapper-left{
+	position: absolute;
+	top: 85px;
+	left: 80px;
+}
+.content-wrapper .torpedo-left{
+	width: 165px;
+	height: 60px;
+	background: url( ../img/torpedo-left.png) no-repeat;
+} 
+.content-wrapper .torpedo-left:nth-of-type(2){
+	transform: rotate(-8deg) translate(-5px, 10px);
+}
+.content-wrapper .torpedo-left:nth-of-type(3){
+	transform: rotate(-24deg) translate(-3px, 20px);
+}
+.content-wrapper .torpedo-left:last-of-type{
+	transform: rotate(-37deg) translate(16px, 40px);
+}
+.content-wrapper .torpedo-wrapper-right{
+	position: absolute;
+	top: 230px;
+	right: -165px;
+}
+.content-wrapper .torpedo-right{
+	width: 165px;
+	height: 60px;
+	background: url( ../img/torpedo-right.png) no-repeat;
+}
+@keyframes torpedo-right1{
+	from{
+		top: 230px;
+		right: -165px;
+	}
+	to{
+		top: 230px;
+		right: -155px;
+	}
+}
+.content-wrapper .torpedo-right:first-of-type{
+	animation: torpedo-right1 1s ease-in-out 3;
+}
+
+.content-wrapper .torpedo-right:nth-of-type(2){
+	transform: rotate(6deg) translate(-12px, -12px);
+}
