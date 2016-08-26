@@ -5,21 +5,13 @@
 	margin: 0 auto;
 	overflow: hidden;
 }
-.content-wrapper .night{
+.content-wrapper .sky{
 	height: 300px;
 	padding: 117px 0 0 82px;
 	box-sizing: border-box;
 	background:  url(../img/smoke.png) no-repeat,
 	url(../img/stars.png) no-repeat, 
 	url(../img/night.png) no-repeat;
-}
-@keyframes water{
-	from { 
-		transform: translate( 0, 0);
-	}
-	to {
-		transform: translate( 0, 5px);
-	}
 }
 .content-wrapper .water{
 	position: absolute;
@@ -28,16 +20,11 @@
 	width: 100%;
 	height: 521px;
 	background:  url(../img/water.png) no-repeat;
+}
+.animate .water{
 	animation: water 2s ease-in-out infinite alternate;
 }
-@keyframes wave{
-	from { 
-		transform: translate( 0, 5px);
-	}
-	to {
-		transform: translate( 0, 0px);
-	}
-}
+
 .content-wrapper .wave{
 	position: absolute;
 	bottom: 0;
@@ -45,10 +32,11 @@
 	width: 100%;
 	height: 524px;
 	background:  url(../img/wave.png) no-repeat;
-	animation: wave 2s ease-in-out infinite alternate;
-
 }
-.content-wrapper .water .iceberg{
+.animate .wave{
+	animation: wave 2s ease-in-out infinite alternate;
+}
+.content-wrapper .iceberg{
 	position: absolute;
 	top: -5%;
 	left: 44%;
@@ -57,53 +45,129 @@
 	background:  url(../img/iceberg.png) no-repeat,
 	url(../img/iceberg1.png) no-repeat bottom right;
 }
-.content-wrapper .night > p{
+.content-wrapper .sky > p{
 	font: 30px HelveticaRoman;
 	color: #95ca00;
 }
-.content-wrapper .torpedo-wrapper-left{
+.content-wrapper .torpedo{
 	position: absolute;
-	top: 85px;
-	left: 80px;
-}
-.content-wrapper .torpedo-left{
 	width: 165px;
 	height: 60px;
-	background: url( ../img/torpedo-left.png) no-repeat;
+	background: url( ../img/torpedo.png) no-repeat;
 } 
-.content-wrapper .torpedo-left:nth-of-type(2){
-	transform: rotate(-8deg) translate(-5px, 10px);
+.content-wrapper .torpedo.left:first-of-type{
+	top: 420px;
+	left: -160px;
+	transform: rotate(-30deg);
+}	
+.animate .torpedo.left:first-of-type{
+	animation: torpedo-left1 3s ease-in infinite;
 }
-.content-wrapper .torpedo-left:nth-of-type(3){
-	transform: rotate(-24deg) translate(-3px, 20px);
+.content-wrapper .torpedo.left:nth-of-type(2){
+	top: 350px;
+	left: -160px;
+	transform: rotate(-10deg);
 }
-.content-wrapper .torpedo-left:last-of-type{
-	transform: rotate(-37deg) translate(16px, 40px);
+.animate .torpedo.left:nth-of-type(2){
+	animation: torpedo-left2 3s ease-in infinite;
 }
-.content-wrapper .torpedo-wrapper-right{
-	position: absolute;
-	top: 230px;
-	right: -165px;
+.content-wrapper .torpedo.left:nth-of-type(3){
+	top: 290px;
+	left: -160px;
+	transform: rotate(-20deg);
 }
-.content-wrapper .torpedo-right{
-	width: 165px;
-	height: 60px;
-	background: url( ../img/torpedo-right.png) no-repeat;
+.animate .torpedo.left:nth-of-type(3){
+	animation: torpedo-left3 3s ease-in infinite 2s;
+}
+.content-wrapper .torpedo.left:nth-of-type(4){
+	top: 220px;
+	left: -160px;
+	transform: rotate(0deg);
+}
+.animate .torpedo.left:nth-of-type(4){
+	animation: torpedo-left4 3s ease-in infinite 2s;
+}
+.content-wrapper .torpedo.right{
+	transform: rotate(180deg);
+}
+.content-wrapper .torpedo.right:nth-of-type(5){
+	top: 330px;
+	right: -160px;
+}
+.animate .torpedo.right:nth-of-type(5){
+	animation: torpedo-right1 3s ease-in infinite 1s;
+}
+.content-wrapper .torpedo.right:last-of-type{
+	top: 390px;
+	right: -160px;
+}
+.animate .torpedo.right:last-of-type{
+	animation: torpedo-right2 3s ease-in infinite 1s;
+}
+
+/*************************animations***************************/
+
+@keyframes wave{
+	from { 
+		transform: translate( 0, 5px);
+	}
+	to {
+		transform: translate( 0, 0px);
+	}
+}
+	@keyframes water{
+	from { 
+		transform: translate( 0, 0);
+	}
+	to {
+		transform: translate( 0, 5px);
+	}
 }
 @keyframes torpedo-right1{
 	from{
-		top: 230px;
-		right: -165px;
+		transform: translate3d(0px, 0px, 0px) rotate(186deg);
 	}
 	to{
-		top: 230px;
-		right: -155px;
+		transform: translate3d(-490px, -250px, 0px) rotate(206deg);
 	}
 }
-.content-wrapper .torpedo-right:first-of-type{
-	animation: torpedo-right1 1s ease-in-out 3;
+@keyframes torpedo-right2{
+	from{
+		transform: translate(0px, 6px) rotate(190deg);
+	}
+	to{
+		transform: translate(-530px, -260px) rotate(204deg);
+	}
 }
-
-.content-wrapper .torpedo-right:nth-of-type(2){
-	transform: rotate(6deg) translate(-12px, -12px);
+@keyframes torpedo-left1{
+	from{
+		transform: translate(0px, 6px) rotate(-35deg);
+	}
+	to{
+		transform: translate(540px, -240px) rotate(-50deg);
+	}
+}
+@keyframes torpedo-left2{
+	from{
+		transform: translate(0px, 6px) rotate(-25deg);
+	}
+	to{
+		transform: translate(500px, -250px) rotate(-35deg);
+	}
+}
+@keyframes torpedo-left3{
+	from{
+		transform: translate(0px, 6px) rotate(-20deg);
+	}
+	to{
+		transform: translate(470px, -260px) rotate(-30deg);
+	}
+}
+@keyframes torpedo-left4{
+	from{
+		transform: translate(0px, 6px) rotate(-10deg);
+	}
+	to{
+		transform: translate(450px, -230px) rotate(-20deg);
+	}
 }
