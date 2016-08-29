@@ -1,3 +1,17 @@
+.pause{
+	display: none;
+}
+.animate .pause{
+	display: block;
+}
+.animate-pause.animate .iceberg,
+.animate-pause.animate .water,
+.animate-pause.animate .wave,
+.content-wrapper.animate-pause.animate .torpedo.left,
+.content-wrapper.animate-pause.animate .torpedo.right
+{
+	animation-play-state: paused;
+}
 .content-wrapper{
 	position: relative;
 	width: 1024px;
@@ -40,12 +54,12 @@
 }
 .content-wrapper .iceberg{
 	position: absolute;
-	top: -5%;
+	top: 27%;
 	left: 44%;
 	width: 115px;
 	height: 130px;
 	background:  url(../img/iceberg.png) no-repeat;
-	z-index: 4;
+	z-index: 1;
 }
 .animate .iceberg{
 	animation: iceberg1 0.1s linear 30 alternate 3s, iceberg2 3s ease-in-out 1 alternate 6s, iceberg3 7s ease-in-out 1 9s;
@@ -187,16 +201,15 @@
 }
 @keyframes iceberg2{
 	from{
-		-webkit-z-index: 2;
+		z-index: 2;
 		-webkit-transform: scale(1);
 	}
 	50%{
-		-webkit-z-index: 2;
-		-webkit-transform: scale(4);
-
+		z-index: 5;
+		-webkit-transform: scale(4);	
 	}
 	to{
-		-webkit-z-index: 5;
+		z-index: 5;
 		-webkit-transform: scale(5);
 	}
 }	
